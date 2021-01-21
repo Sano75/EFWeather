@@ -40,6 +40,7 @@ namespace EFWeather
             this.btnInneSearch = new System.Windows.Forms.Button();
             this.gvInne = new System.Windows.Forms.DataGridView();
             this.tbpUte = new System.Windows.Forms.TabPage();
+            this.btnUteMogelRisk = new System.Windows.Forms.Button();
             this.dTimePickerUte = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.lblMetVinter = new System.Windows.Forms.Label();
@@ -50,7 +51,14 @@ namespace EFWeather
             this.button3 = new System.Windows.Forms.Button();
             this.btnUteSearch = new System.Windows.Forms.Button();
             this.GvUte = new System.Windows.Forms.DataGridView();
-            this.btnUteMogelRisk = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRaderDBInne = new System.Windows.Forms.Label();
+            this.lblMatningInne = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblMatningUte = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblUteAntalRaderDB = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tbpInne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvInne)).BeginInit();
@@ -92,6 +100,10 @@ namespace EFWeather
             // 
             // tbpInne
             // 
+            this.tbpInne.Controls.Add(this.lblMatningInne);
+            this.tbpInne.Controls.Add(this.label6);
+            this.tbpInne.Controls.Add(this.lblRaderDBInne);
+            this.tbpInne.Controls.Add(this.label2);
             this.tbpInne.Controls.Add(this.dtimePickerInne);
             this.tbpInne.Controls.Add(this.btnInneTemp);
             this.tbpInne.Controls.Add(this.btnInneAterst);
@@ -118,7 +130,7 @@ namespace EFWeather
             // btnInneTemp
             // 
             this.btnInneTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInneTemp.Location = new System.Drawing.Point(7, 66);
+            this.btnInneTemp.Location = new System.Drawing.Point(7, 116);
             this.btnInneTemp.Name = "btnInneTemp";
             this.btnInneTemp.Size = new System.Drawing.Size(124, 34);
             this.btnInneTemp.TabIndex = 13;
@@ -129,7 +141,7 @@ namespace EFWeather
             // btnInneAterst
             // 
             this.btnInneAterst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInneAterst.Location = new System.Drawing.Point(186, 66);
+            this.btnInneAterst.Location = new System.Drawing.Point(186, 116);
             this.btnInneAterst.Name = "btnInneAterst";
             this.btnInneAterst.Size = new System.Drawing.Size(124, 34);
             this.btnInneAterst.TabIndex = 12;
@@ -140,7 +152,7 @@ namespace EFWeather
             // btnInneMogelRisk
             // 
             this.btnInneMogelRisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInneMogelRisk.Location = new System.Drawing.Point(6, 120);
+            this.btnInneMogelRisk.Location = new System.Drawing.Point(6, 170);
             this.btnInneMogelRisk.Name = "btnInneMogelRisk";
             this.btnInneMogelRisk.Size = new System.Drawing.Size(124, 34);
             this.btnInneMogelRisk.TabIndex = 11;
@@ -172,6 +184,10 @@ namespace EFWeather
             // 
             // tbpUte
             // 
+            this.tbpUte.Controls.Add(this.lblMatningUte);
+            this.tbpUte.Controls.Add(this.label5);
+            this.tbpUte.Controls.Add(this.lblUteAntalRaderDB);
+            this.tbpUte.Controls.Add(this.label8);
             this.tbpUte.Controls.Add(this.btnUteMogelRisk);
             this.tbpUte.Controls.Add(this.dTimePickerUte);
             this.tbpUte.Controls.Add(this.label4);
@@ -190,6 +206,17 @@ namespace EFWeather
             this.tbpUte.TabIndex = 1;
             this.tbpUte.Text = "Ute";
             this.tbpUte.UseVisualStyleBackColor = true;
+            // 
+            // btnUteMogelRisk
+            // 
+            this.btnUteMogelRisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUteMogelRisk.Location = new System.Drawing.Point(187, 147);
+            this.btnUteMogelRisk.Name = "btnUteMogelRisk";
+            this.btnUteMogelRisk.Size = new System.Drawing.Size(124, 34);
+            this.btnUteMogelRisk.TabIndex = 16;
+            this.btnUteMogelRisk.Text = "Mögelrisk";
+            this.btnUteMogelRisk.UseVisualStyleBackColor = true;
+            this.btnUteMogelRisk.Click += new System.EventHandler(this.btnUteMogelRisk_Click);
             // 
             // dTimePickerUte
             // 
@@ -224,7 +251,7 @@ namespace EFWeather
             // 
             this.lblMetHost.AutoSize = true;
             this.lblMetHost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMetHost.Location = new System.Drawing.Point(6, 211);
+            this.lblMetHost.Location = new System.Drawing.Point(6, 228);
             this.lblMetHost.Name = "lblMetHost";
             this.lblMetHost.Size = new System.Drawing.Size(32, 17);
             this.lblMetHost.TabIndex = 9;
@@ -234,7 +261,7 @@ namespace EFWeather
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 181);
+            this.label1.Location = new System.Drawing.Point(6, 198);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 17);
             this.label1.TabIndex = 8;
@@ -243,7 +270,7 @@ namespace EFWeather
             // btnUteMedelTemp
             // 
             this.btnUteMedelTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUteMedelTemp.Location = new System.Drawing.Point(7, 61);
+            this.btnUteMedelTemp.Location = new System.Drawing.Point(7, 103);
             this.btnUteMedelTemp.Name = "btnUteMedelTemp";
             this.btnUteMedelTemp.Size = new System.Drawing.Size(173, 34);
             this.btnUteMedelTemp.TabIndex = 7;
@@ -254,7 +281,7 @@ namespace EFWeather
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(186, 61);
+            this.button4.Location = new System.Drawing.Point(186, 103);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 34);
             this.button4.TabIndex = 6;
@@ -265,7 +292,7 @@ namespace EFWeather
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(7, 116);
+            this.button3.Location = new System.Drawing.Point(7, 147);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(175, 34);
             this.button3.TabIndex = 5;
@@ -291,16 +318,85 @@ namespace EFWeather
             this.GvUte.Size = new System.Drawing.Size(541, 373);
             this.GvUte.TabIndex = 1;
             // 
-            // btnUteMogelRisk
+            // label2
             // 
-            this.btnUteMogelRisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUteMogelRisk.Location = new System.Drawing.Point(187, 116);
-            this.btnUteMogelRisk.Name = "btnUteMogelRisk";
-            this.btnUteMogelRisk.Size = new System.Drawing.Size(124, 34);
-            this.btnUteMogelRisk.TabIndex = 16;
-            this.btnUteMogelRisk.Text = "Mögelrisk";
-            this.btnUteMogelRisk.UseVisualStyleBackColor = true;
-            this.btnUteMogelRisk.Click += new System.EventHandler(this.btnUteMogelRisk_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Antal rader i DB:";
+            // 
+            // lblRaderDBInne
+            // 
+            this.lblRaderDBInne.AutoSize = true;
+            this.lblRaderDBInne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRaderDBInne.Location = new System.Drawing.Point(123, 56);
+            this.lblRaderDBInne.Name = "lblRaderDBInne";
+            this.lblRaderDBInne.Size = new System.Drawing.Size(32, 17);
+            this.lblRaderDBInne.TabIndex = 16;
+            this.lblRaderDBInne.Text = "???";
+            // 
+            // lblMatningInne
+            // 
+            this.lblMatningInne.AutoSize = true;
+            this.lblMatningInne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatningInne.Location = new System.Drawing.Point(123, 82);
+            this.lblMatningInne.Name = "lblMatningInne";
+            this.lblMatningInne.Size = new System.Drawing.Size(32, 17);
+            this.lblMatningInne.TabIndex = 18;
+            this.lblMatningInne.Text = "???";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(5, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Mätning inomhus:";
+            // 
+            // lblMatningUte
+            // 
+            this.lblMatningUte.AutoSize = true;
+            this.lblMatningUte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatningUte.Location = new System.Drawing.Point(124, 72);
+            this.lblMatningUte.Name = "lblMatningUte";
+            this.lblMatningUte.Size = new System.Drawing.Size(32, 17);
+            this.lblMatningUte.TabIndex = 22;
+            this.lblMatningUte.Text = "???";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Mätning utomhus:";
+            // 
+            // lblUteAntalRaderDB
+            // 
+            this.lblUteAntalRaderDB.AutoSize = true;
+            this.lblUteAntalRaderDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUteAntalRaderDB.Location = new System.Drawing.Point(124, 46);
+            this.lblUteAntalRaderDB.Name = "lblUteAntalRaderDB";
+            this.lblUteAntalRaderDB.Size = new System.Drawing.Size(32, 17);
+            this.lblUteAntalRaderDB.TabIndex = 20;
+            this.lblUteAntalRaderDB.Text = "???";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Antal rader i DB:";
             // 
             // Statistik
             // 
@@ -318,6 +414,7 @@ namespace EFWeather
             this.Load += new System.EventHandler(this.Statistik_Load);
             this.tabControl1.ResumeLayout(false);
             this.tbpInne.ResumeLayout(false);
+            this.tbpInne.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvInne)).EndInit();
             this.tbpUte.ResumeLayout(false);
             this.tbpUte.PerformLayout();
@@ -350,5 +447,13 @@ namespace EFWeather
         private System.Windows.Forms.DateTimePicker dtimePickerInne;
         private System.Windows.Forms.DateTimePicker dTimePickerUte;
         private System.Windows.Forms.Button btnUteMogelRisk;
+        private System.Windows.Forms.Label lblMatningInne;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblRaderDBInne;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMatningUte;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUteAntalRaderDB;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -57,16 +57,25 @@ namespace EFWeather
             DataTable dt2 = new DataTable();
             string comdInne = "select * from WeatherItems where utrymme = 'inne';";
             String comdUte = "select * from WeatherItems where utrymme = 'ute';";
+            string antalRaderDB = "select count(*)-1 from WeatherItems";
+            string antalInne = "select count(*)-1 from WeatherItems where utrymme = 'inne'";
+            string antalUte = "select count(*)-1 from WeatherItems where utrymme = 'ute'";
             string medelH = "select top 1 Datum, Temp from WeatherItems where utrymme = 'ute' and Temp <= 10 ";
             string medelV = "select top 1 Datum, Temp from WeatherItems where utrymme = 'ute' and Temp <= 0  ";
             string lblHost;
             string lblVint;
+
             try
             {
                 using (con = new SqlConnection(myConString))
                 {
                     SqlCommand mdHost = new SqlCommand(medelH, con);
                     SqlCommand mdVint = new SqlCommand(medelV, con);
+                    SqlCommand antalRader = new SqlCommand(antalRaderDB, con);
+                    SqlCommand antalRInne = new SqlCommand(antalInne, con);
+                    SqlCommand antalRUte = new SqlCommand(antalUte, con);
+
+
                     con.Open();
                     cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
@@ -84,6 +93,10 @@ namespace EFWeather
                     GvUte.DataSource = dt2;
                     lblHost = mdHost.ExecuteScalar().ToString();
                     lblVint = mdVint.ExecuteScalar().ToString();
+                    lblUteAntalRaderDB.Text = antalRader.ExecuteScalar().ToString()+" rader";
+                    lblRaderDBInne.Text = antalRader.ExecuteScalar().ToString()+" rader";
+                    lblMatningInne.Text = antalRInne.ExecuteScalar().ToString() + " rader";
+                    lblMatningUte.Text = antalRUte.ExecuteScalar().ToString() + " rader";
                     con.Close();
                 }
                 lblMetHost.Text = lblHost.ToString();

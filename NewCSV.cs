@@ -20,6 +20,10 @@ namespace EFWeather
         DataTable dt = new DataTable();
         int antalRader = 0;
         static int antalTillSQL = 0;
+        //string myConString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\WeatherEF.mdf;Integrated Security=True;Connect Timeout=30";
+        string myConString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sano_\WeatherEF.mdf;Integrated Security=True;Connect Timeout=30";
+
+
 
         public NewCSV()
         {
@@ -111,7 +115,6 @@ namespace EFWeather
         {
 
             SqlCommand cmd = new SqlCommand();
-            string myConString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sano_\WeatherEF.mdf;Integrated Security=True;Connect Timeout=30";
             string deleteCmd = "delete from WeatherItems";           
             string cmd2 = @"' with (rowterminator = '\n', fieldterminator = ',') ";
             string cmdView = @"bulk insert VWeather from '";
@@ -144,7 +147,6 @@ namespace EFWeather
         public void AddToSql(String file)
         {
             SqlCommand cmd = new SqlCommand();
-            string myConString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sano_\WeatherEF.mdf;Integrated Security=True;Connect Timeout=30";
             string cmd2 = @"' with (rowterminator = '\n', fieldterminator = ',') ";
             string cmdView = @"bulk insert VWeather from '";
             string ViewCMD = cmdView + file + cmd2;

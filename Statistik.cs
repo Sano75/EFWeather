@@ -18,6 +18,7 @@ namespace EFWeather
         DataTable dt;
         SqlDataAdapter sda;
         string myConString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sano_\WeatherEF.mdf;Integrated Security=True;Connect Timeout=30";
+
         WeatherDBContext db;
 
         public Statistik()

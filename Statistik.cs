@@ -308,5 +308,60 @@ namespace EFWeather
             }
 
         }
+
+        private void btnUteFukt_Click(object sender, EventArgs e)
+        {
+            dt = new DataTable();
+            SqlCommand cmd2 = new SqlCommand();
+            DataTable dt2 = new DataTable();
+            try
+            {
+                using (con = new SqlConnection(myConString))
+                {
+                    con.Open();
+                    cmd = new SqlCommand("SP_Egen_Ute_Fukt", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    GvUte.DataSource = dt;
+
+
+                    con.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sql-Tabell kan inte visas\n\n" + ex);
+            }
+        }
+
+        private void btnInneFukt_Click(object sender, EventArgs e)
+        {
+            dt = new DataTable();
+            SqlCommand cmd2 = new SqlCommand();
+            DataTable dt2 = new DataTable();
+
+            try
+            {
+                using (con = new SqlConnection(myConString))
+                {
+                    con.Open();
+                    cmd = new SqlCommand("SP_Egen_Inne_Fukt", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    gvInne.DataSource = dt;
+
+
+                    con.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sql-Tabell kan inte visas\n\n" + ex);
+            }
+        }
     }
 }

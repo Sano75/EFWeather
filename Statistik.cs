@@ -259,22 +259,18 @@ namespace EFWeather
             dt = new DataTable();
             SqlCommand cmd2 = new SqlCommand();
             DataTable dt2 = new DataTable();
-            string comdInne = "select datum, avg(temp) as Medel_Temp, avg(fuktighet) as Medel_Fuktighet, " +
-                "(((avg(Fuktighet-78)) * (avg(Temp/15))) / 0.22) as Mögelrisk" +
-                "from WeatherItems where utrymme = 'inne' group by Datum";
            
             try
             {
                 using (con = new SqlConnection(myConString))
                 {
                     con.Open();
-                    cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = comdInne;
+                    cmd = new SqlCommand("SP_Egen_Inne_mogel", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                     gvInne.DataSource = dt;
-                 
+
                     con.Close();
                 }
 
@@ -290,18 +286,14 @@ namespace EFWeather
             dt = new DataTable();
             SqlCommand cmd2 = new SqlCommand();
             DataTable dt2 = new DataTable();
-            string comdUte = "select datum, avg(temp) as Medel_Temp, avg(fuktighet) as Medel_Fuktighet, " +
-                "(((avg(Fuktighet-78)) * (avg(Temp/15))) / 0.22) as Mögelrisk " +
-                "from WeatherItems where utrymme = 'ute' group by Datum";
-
+            
             try
             {
                 using (con = new SqlConnection(myConString))
                 {
                     con.Open();
-                    cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = comdUte;
+                    cmd = new SqlCommand("SP_Egen_Ute_mogel", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
                     GvUte.DataSource = dt;

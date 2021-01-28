@@ -115,8 +115,10 @@ namespace EFWeather
         {
 
             SqlCommand cmd = new SqlCommand();
-            string deleteCmd = "delete from WeatherItems";           
+            string deleteCmd = "delete from WeatherItems";
+            //preparing for the bulk insert
             string cmd2 = @"' with (rowterminator = '\n', fieldterminator = ',') ";
+            //using the view VWeather to insert data from the csv file
             string cmdView = @"bulk insert VWeather from '";
             string ViewCMD = cmdView+ file+ cmd2;
             string raderiDB = "select count(*) from WeatherItems where datum is not null";

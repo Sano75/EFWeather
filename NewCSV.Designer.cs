@@ -76,7 +76,7 @@ namespace EFWeather
             // btnGetFile
             // 
             this.btnGetFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetFile.Location = new System.Drawing.Point(555, 35);
+            this.btnGetFile.Location = new System.Drawing.Point(743, 35);
             this.btnGetFile.Name = "btnGetFile";
             this.btnGetFile.Size = new System.Drawing.Size(149, 29);
             this.btnGetFile.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace EFWeather
             // btnAddNewRecords
             // 
             this.btnAddNewRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewRecords.Location = new System.Drawing.Point(555, 206);
+            this.btnAddNewRecords.Location = new System.Drawing.Point(743, 206);
             this.btnAddNewRecords.Name = "btnAddNewRecords";
             this.btnAddNewRecords.Size = new System.Drawing.Size(149, 29);
             this.btnAddNewRecords.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace EFWeather
             // btnSaveNew
             // 
             this.btnSaveNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveNew.Location = new System.Drawing.Point(555, 155);
+            this.btnSaveNew.Location = new System.Drawing.Point(743, 155);
             this.btnSaveNew.Name = "btnSaveNew";
             this.btnSaveNew.Size = new System.Drawing.Size(149, 29);
             this.btnSaveNew.TabIndex = 5;
@@ -111,14 +111,14 @@ namespace EFWeather
             this.gvNewCSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvNewCSV.Location = new System.Drawing.Point(2, 70);
             this.gvNewCSV.Name = "gvNewCSV";
-            this.gvNewCSV.Size = new System.Drawing.Size(547, 368);
+            this.gvNewCSV.Size = new System.Drawing.Size(735, 368);
             this.gvNewCSV.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(563, 80);
+            this.label1.Location = new System.Drawing.Point(751, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 7;
@@ -128,7 +128,7 @@ namespace EFWeather
             // 
             this.lblAntalRader.AutoSize = true;
             this.lblAntalRader.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAntalRader.Location = new System.Drawing.Point(606, 102);
+            this.lblAntalRader.Location = new System.Drawing.Point(794, 102);
             this.lblAntalRader.Name = "lblAntalRader";
             this.lblAntalRader.Size = new System.Drawing.Size(40, 17);
             this.lblAntalRader.TabIndex = 8;
@@ -138,7 +138,7 @@ namespace EFWeather
             // 
             this.lblRaderDB.AutoSize = true;
             this.lblRaderDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaderDB.Location = new System.Drawing.Point(606, 271);
+            this.lblRaderDB.Location = new System.Drawing.Point(794, 271);
             this.lblRaderDB.Name = "lblRaderDB";
             this.lblRaderDB.Size = new System.Drawing.Size(40, 17);
             this.lblRaderDB.TabIndex = 12;
@@ -148,7 +148,7 @@ namespace EFWeather
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(574, 248);
+            this.label5.Location = new System.Drawing.Point(762, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 11;
@@ -158,7 +158,7 @@ namespace EFWeather
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 450);
+            this.ClientSize = new System.Drawing.Size(904, 450);
             this.Controls.Add(this.lblRaderDB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblAntalRader);
@@ -175,7 +175,6 @@ namespace EFWeather
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewCSV";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ncsv_FormClosing);
-            this.Load += new System.EventHandler(this.NewCSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvNewCSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

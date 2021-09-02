@@ -86,12 +86,16 @@ namespace EFWeather
                         string[] dataL = lines[r].Split(',');
                         DataRow dr = dt.NewRow();
                         int columnIndex = 0;
-                        foreach (string hLabel in headerLabels)
+                        try
                         {
-                            dr[hLabel] = dataL[columnIndex++];
+                            foreach (string hLabel in headerLabels)
+                            {
+                                dr[hLabel] = dataL[columnIndex++];
+                            }
+                            dt.Rows.Add(dr);
+                            antalRader++;
                         }
-                        dt.Rows.Add(dr);
-                        antalRader++;
+                        catch (Exception) { dt.Rows.Add("Importerad fil kan inte läsas"); }
                     }
                     lblAntalRader.Text = " " + antalRader + " ";
                 }
@@ -176,9 +180,5 @@ namespace EFWeather
             }
         }
 
-        private void NewCSV_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
